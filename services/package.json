@@ -1,0 +1,14 @@
+{
+  "name": "services",
+  "version": "1.0.0",
+  "dependencies": {
+    "@graphql-tools/delegate": "^9.0.9",
+    "@graphql-tools/stitch": "^8.7.14",
+    "@graphql-tools/utils": "^8.13.0",
+    "@graphql-tools/wrap": "^9.2.4",
+    "@graphql-yoga/node": "^2.13.13",
+    "@vendia/serverless-express": "^4.10.1",
+    "graphql": "^16.6.0",
+    "graphql-request": "^5.0.0"
+  }
+}

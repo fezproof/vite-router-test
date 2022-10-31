@@ -1,5 +1,5 @@
 {
-  "name": "router-demo",
-  "stage": "dev",
-  "region": "ap-southeast-2"
+  "name": "ben-router-demo",
+  "region": "ap-southeast-2",
+  "main": "stacks/index.ts"
 }
