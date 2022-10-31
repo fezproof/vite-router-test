@@ -20,10 +20,10 @@ export const loader: LoaderFunction = async ({ params: { id } }) => {
     return redirect("../list");
   }
   try {
-    await client.query({
+    client.query({
       query: filmDetailsQueryDocument,
       variables: { id },
-      fetchPolicy: "cache-first",
+      fetchPolicy: "network-only",
     });
   } catch (error) {
     return redirect("/film/list");
@@ -33,7 +33,7 @@ export const loader: LoaderFunction = async ({ params: { id } }) => {
 const Root = () => {
   const { id } = useParams();
 
-  const { data } = useQuery(filmDetailsQueryDocument, {
+  const { data, loading } = useQuery(filmDetailsQueryDocument, {
     variables: { id: id as string },
     fetchPolicy: "cache-first",
   });
@@ -41,6 +41,12 @@ const Root = () => {
   return (
     <div className="p-8">
       <header className="mx-auto max-w-prose w-full mb-8">
+        {loading && !data && (
+          <div>
+            <span className="bg-gray-300 h-7 w-48 block m-0.5"></span>
+            <span className="bg-gray-300 h-5 w-32 block m-0.5"></span>
+          </div>
+        )}
         {data?.film && <FilmHeading film={data.film} />}
       </header>
       <main className="max-w-prose mx-auto w-full">
