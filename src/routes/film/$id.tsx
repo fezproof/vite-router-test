@@ -35,7 +35,6 @@ const Root = () => {
 
   const { data, loading } = useQuery(filmDetailsQueryDocument, {
     variables: { id: id as string },
-    fetchPolicy: "cache-first",
   });
 
   return (

@@ -17,7 +17,10 @@ const allFilmsQueryDocument = graphql(/* GraphQL */ `
 `);
 
 export const loader: LoaderFunction = async () => {
-  await client.query({ query: allFilmsQueryDocument });
+  client.query({
+    query: allFilmsQueryDocument,
+    fetchPolicy: "network-only",
+  });
 };
 
 const Root = () => {
