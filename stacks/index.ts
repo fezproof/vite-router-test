@@ -1,5 +1,5 @@
 import { App } from "@serverless-stack/resources";
-import { Api } from "./Api";
+import { Gateway } from "./Gateway";
 import { Web } from "./Web";
 
 export default function main(app: App) {
@@ -13,5 +13,5 @@ export default function main(app: App) {
     },
   });
 
-  app.stack(Api).stack(Web);
+  app.stack(Gateway).stack(Web);
 }

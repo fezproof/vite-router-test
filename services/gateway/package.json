@@ -1,5 +1,6 @@
 {
-  "name": "services",
+  "name": "@services/gateway",
+  "private": true,
   "version": "1.0.0",
   "dependencies": {
     "@graphql-tools/delegate": "^9.0.9",

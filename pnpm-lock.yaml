@@ -24,7 +24,7 @@ importers:
       typescript: 4.8.4
       vitest: 0.24.3
 
-  services:
+  services/gateway:
     specifiers:
       '@graphql-tools/delegate': ^9.0.9
       '@graphql-tools/stitch': ^8.7.14
